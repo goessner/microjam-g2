@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Use g2 with microjam">
+<meta name="date" content="Mon Apr 13 2020 02:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="keywords" content="microjam,Jamstack,static page,vector graphics,g2">
+<title>&mu;Jam &ndash; g2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github-gist.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body>
+<header>
+  <a href="./index.html" class="left">microJam &ndash; g2</a>
+  <div class="right">
+      <a href="./example.html">Example</a> | <a href="./triangle.html">Triangle</a> | <a href="./about.html">About</a>
+  </div>
+</header>
+<main>
+<article>
+<h1 id="g2">g2</h1>
+<p>Using <a href="https://github.com/goessner/g2" data-href="https://github.com/goessner/g2">g2</a> with μJam is easy. A custom html element <code>&lt;g-2&gt;</code> with a predefined set of supported attributes can be injected in <code>html</code> as well as in <code>md</code> documents.</p>
+<p>On top of that we get seamless integration into the markdown preview window of VSCode.</p>
+<figure>
+  <img src="./media/mujam-g2.gif">
+  <figcaption>Fig.1: Using g2 inside of markdown with VSCode</figcaption>
+</figure>
+<p>You can see this <a href="./example.html" data-href="./example.html">here live</a>. We can also combine <code>&lt;g-2&gt;</code> elements with inline scripts.</p>
+<figure>
+  <img src="./media/triangle.gif">
+  <figcaption>Fig.2: Combining g2 with markdown inline scripts</figcaption>
+</figure>
+<p>You can see that triangle <a href="./triangle.html" data-href="./triangle.html">live here</a>.</p>
+
+
+</article>
+</main>
+<footer>
+  <span class="left">microJam &ndash; g2</span>
+  <span class="center">powered by &mu;Jam &amp; <a href="https://code.visualstudio.com/">VSCode</a> &mdash; hosted by <a href="https://github.com/">GitHub</a></span>
+  <span class="right"
+        title="toggle light/dark theme"
+        onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">
+    &#9788;
+  </span>
+</footer>
+<script src="js/g2.html.js"></script>
+</body>
+</html>

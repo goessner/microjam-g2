@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content=" - microjam page">
+
+<meta name="keywords" content="">
+<title></title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github-gist.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body>
+<header>
+  <a href="./index.html" class="left">microJam &ndash; g2</a>
+  <div class="right">
+      <a href="./example.html">Example</a> | <a href="./triangle.html">Triangle</a> | <a href="./about.html">About</a>
+  </div>
+</header>
+<main>
+<h1 id="g2-%E2%80%93-interactiv-weak-contrained-geometry">g2 – Interactiv Weak Contrained Geometry</h1>
+<p>This are mostly <code>g2</code> features shown here. You can select and move the three circular handles in the vector graphics below.</p>
+<figure>
+<g-2 id='g' width="400" height="300" x0="100" y0="100" cartesian grid darkmode interactive>
+{ "main":[
+    {"c":"lin","a":{"x1":"@A.x","y1":"@A.y","x2":"@B.x","y2":"@B.y","lw":3,"ls":"navy"}},
+    {"c":"cir","a":{"id":"A","x":150,"y":100,"r":5,"fs":"orange"}},
+    {"c":"cir","a":{"id":"B","x":-50,"y":100,"r":5,"fs":"orange"}}
+  ]
+}
+</g-2>
+  <figcaption>Fig.: Weak constrained geometry</figcaption>
+</figure>
+<p>The custom <code>g-2</code> element used is ...</p>
+<pre><code class="code-line language-xml"><div><span class="hljs-tag">&lt;<span class="hljs-name">g-2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'g'</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">x0</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">y0</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">cartesian</span> <span class="hljs-attr">grid</span> <span class="hljs-attr">darkmode</span> <span class="hljs-attr">interactive</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- g2 graphics data --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g-2</span>&gt;</span>
+</div></code></pre>
+<p>... and <code>g2</code> graphics data embedded are:</p>
+<pre><code class="code-line language-json"><div>{ <span class="hljs-attr">"main"</span>:[
+    {<span class="hljs-attr">"c"</span>:<span class="hljs-string">"lin"</span>,<span class="hljs-attr">"a"</span>:{ <span class="hljs-attr">"x1"</span>:<span class="hljs-string">"@A.x"</span>,<span class="hljs-attr">"y1"</span>:<span class="hljs-string">"@A.y"</span>,
+                     <span class="hljs-attr">"x2"</span>:<span class="hljs-string">"@B.x"</span>,<span class="hljs-attr">"y2"</span>:<span class="hljs-string">"@B.y"</span>,
+                     <span class="hljs-attr">"lw"</span>:<span class="hljs-number">3</span>, <span class="hljs-attr">"ls"</span>:<span class="hljs-string">"navy"</span>} },
+    {<span class="hljs-attr">"c"</span>:<span class="hljs-string">"cir"</span>,<span class="hljs-attr">"a"</span>:{ <span class="hljs-attr">"id"</span>:<span class="hljs-string">"A"</span>,
+                     <span class="hljs-attr">"x"</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">"y"</span>:<span class="hljs-number">100</span>,<span class="hljs-attr">"r"</span>:<span class="hljs-number">5</span>,
+                     <span class="hljs-attr">"fs"</span>:<span class="hljs-string">"orange"</span>} },
+    {<span class="hljs-attr">"c"</span>:<span class="hljs-string">"cir"</span>,<span class="hljs-attr">"a"</span>:{ <span class="hljs-attr">"id"</span>:<span class="hljs-string">"B"</span>,
+                     <span class="hljs-attr">"x"</span>:<span class="hljs-number">-50</span>,<span class="hljs-attr">"y"</span>:<span class="hljs-number">100</span>,<span class="hljs-attr">"r"</span>:<span class="hljs-number">5</span>,
+                     <span class="hljs-attr">"fs"</span>:<span class="hljs-string">"orange"</span>} }
+  ]
+}
+</div></code></pre>
+
+</main>
+<footer>
+  <span class="left">microJam &ndash; g2</span>
+  <span class="center">powered by &mu;Jam &amp; <a href="https://code.visualstudio.com/">VSCode</a> &mdash; hosted by <a href="https://github.com/">GitHub</a></span>
+  <span class="right"
+        title="toggle light/dark theme"
+        onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">
+    &#9788;
+  </span>
+</footer>
+<script src="js/g2.html.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="About using g2 with microjam">
+<meta name="date" content="Sun Apr 26 2020 02:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="keywords" content="microjam,Jamstack,static page,vector graphics,g2">
+<title>About</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github-gist.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body>
+<header>
+  <a href="./index.html" class="left">microJam &ndash; g2</a>
+  <div class="right">
+      <a href="./example.html">Example</a> | <a href="./triangle.html">Triangle</a> | <a href="./about.html">About</a>
+  </div>
+</header>
+<main>
+<h1 id="about">About</h1>
+<p>A custom html element <code>&lt;g-2&gt;</code> with a predefined set of supported attributes can be injected in <code>html</code> as well as in <code>md</code> documents.</p>
+<p>On top of that we get seamless integration into the markdown preview window of VSCode.</p>
+<figure>
+<g-2 id='g' width="128" height="128" cartesian x0="64" y0="-10" darkmode interactive>
+{ 
+"main":[
+    {"c":"use","a":{"grp":"jam","x":0,"y":0,"scl":0.4}}
+  ],
+"jam":[
+    {"c":"drw","a":{"d":"M0,30L80,30Q100,30 100,50L100,250L80,270L-80,270L-100,250L-100,50Q-100,30 -80,30Z","lw":10,"fs":"#ee431b","ls":"black"}},
+    {"c":"drw","a":{"d":"M0,300L70,300L110,270Q60,220 20,260Q0,280-20,260Q-65,200-110,270L-70,300Z","lw":10,"fs":"white","ls":"black","lj":"round"}},
+    {"c":"drw","a":{"d":"M0,340L60,340Q90,340 90,320L90,300L-90,300L-90,320Q-90,340-60,340Z","lw":10,"fs":"#35682d","ls":"black","lj":"round"}},
+    {"c":"txt","a":{"str":"μ","x":0,"y":120,"font":"175px cursive","thal":"center","fs":"#000"}}
+]
+}
+</g-2>
+  <figcaption>&mu;Jam Icon</figcaption>
+</figure>
+<p>The graphics commands are embedded inside of <code>&lt;g-2&gt;</code> element in <code>JSON</code> format.</p>
+<pre><code class="code-line language-xml"><div><span class="hljs-tag">&lt;<span class="hljs-name">g-2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'g'</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"128"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"128"</span> <span class="hljs-attr">cartesian</span> <span class="hljs-attr">x0</span>=<span class="hljs-string">"64"</span> <span class="hljs-attr">y0</span>=<span class="hljs-string">"-10"</span>&gt;</span>
+   { "main":[ /* g2 json format */ ] }
+<span class="hljs-tag">&lt;/<span class="hljs-name">g-2</span>&gt;</span>
+
+</div></code></pre>
+<svg width="126" height="20">
+    <rect rx="3" fill="#555" width="126" height="20"/>
+    <rect rx="3" fill="#35682d" width="39" x="87" height="20"/>
+    <g font-size="11" font-family="Verdana,Geneva,sans-serif" fill="#fff">
+        <text x="6" y="14">dependencies</text>
+        <text x="92" y="14">none</text>
+    </g>
+</svg>
+
+</main>
+<footer>
+  <span class="left">microJam &ndash; g2</span>
+  <span class="center">powered by &mu;Jam &amp; <a href="https://code.visualstudio.com/">VSCode</a> &mdash; hosted by <a href="https://github.com/">GitHub</a></span>
+  <span class="right"
+        title="toggle light/dark theme"
+        onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">
+    &#9788;
+  </span>
+</footer>
+<script src="js/g2.html.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content=" - microjam page">
+
+<meta name="keywords" content="">
+<title></title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github-gist.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body>
+<header>
+  <a href="./index.html" class="left">microJam &ndash; g2</a>
+  <div class="right">
+      <a href="./example.html">Example</a> | <a href="./triangle.html">Triangle</a> | <a href="./about.html">About</a>
+  </div>
+</header>
+<main>
+<h1 id="g2-%E2%80%93-strong-constrained-triangle-geometry">g2 – Strong Constrained Triangle Geometry</h1>
+<p>These are mostly <code>g2</code> features shown here. The vector graphics n this markdown preview is interactive. You can select and move the two orange circular handles below.</p>
+<figure>
+    <g-2 id='g' width="401" height="301" x0="100" y0="100" darkmode 
+         grid cartesian interactive></g-2>
+  <figcaption>Fig.: Strong constrained triangle geometry</figcaption>
+</figure>
+<p>In case, you see incomplete graphics inside of  VSCode this <img src="./media/security-warning.png" alt="security-warning.png" class="loading" id="image-hash-2e72df07be7876a4c13a15231ffe5703ad27b5c4ef1a87e9786c58adbc6c2728"> security warning, you want to click on it. Select <code>Disable</code> and thus allow our embedded script to run.</p>
+<figure>
+    <img src="./media/security-settings.png">
+</figure>
+<p>We use an empty <code>&lt;g-2&gt;</code> element here and later fill the graphics content via script.</p>
+<pre><code class="code-line language-xml"><div><span class="hljs-tag">&lt;<span class="hljs-name">g-2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'g'</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"401"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"301"</span> <span class="hljs-attr">x0</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">y0</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">darkmode</span> 
+         <span class="hljs-attr">grid</span> <span class="hljs-attr">cartesian</span> <span class="hljs-attr">interactive</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">g-2</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- some code lines later --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./js/triangle.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<p>The script <code>triangle.js</code> is located relative to the markdown content document and contains the code:</p>
+<pre><code class="code-line language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">const</span> g2elm = e.currentTarget;
+    <span class="hljs-keyword">const</span> A = {<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">'#ccc'</span>}, 
+          B = {<span class="hljs-attr">x</span>:<span class="hljs-number">200</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">'orange'</span>},
+          C = {<span class="hljs-attr">x</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">25</span>*<span class="hljs-number">75</span>),<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">'#ccc'</span>};
+          H = {<span class="hljs-attr">x</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">'orange'</span>};
+
+    g2elm.g.ply({<span class="hljs-attr">pts</span>:[H,A,C,H,B,C],<span class="hljs-attr">fs</span>:<span class="hljs-string">'lightgreen'</span>,<span class="hljs-attr">lw</span>:<span class="hljs-number">2</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">'navy'</span>,<span class="hljs-attr">lj</span>:<span class="hljs-string">'round'</span>})
+           .arc({<span class="hljs-attr">x</span>:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>B.x/<span class="hljs-number">2</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>B.x/<span class="hljs-number">2</span>,<span class="hljs-attr">w</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">dw</span>:<span class="hljs-built_in">Math</span>.PI,<span class="hljs-attr">lw</span>:<span class="hljs-number">2</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">'navy'</span>})
+           .cir(A)
+           .cir(B)
+           .cir(C)
+           .cir(H)
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">constraining</span>(<span class="hljs-params"></span>) </span>{
+        B.x = <span class="hljs-built_in">Math</span>.max(B.x,<span class="hljs-number">0</span>);
+        C.x = H.x = <span class="hljs-built_in">Math</span>.max(<span class="hljs-built_in">Math</span>.min(H.x,B.x),<span class="hljs-number">0</span>);
+        C.y = <span class="hljs-built_in">Math</span>.sqrt(C.x*(B.x-C.x));
+        B.y = H.y = <span class="hljs-number">0</span>;
+    }
+
+    g2elm.addEventListener(<span class="hljs-string">"tick"</span>, constraining, <span class="hljs-literal">false</span>);
+}
+
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"DOMContentLoaded"</span>, () =&gt; {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.readyState === <span class="hljs-string">'loading'</span>)
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'g'</span>).addEventListener(<span class="hljs-string">"init"</span>, init, <span class="hljs-literal">false</span>);
+    <span class="hljs-keyword">else</span>
+        init({<span class="hljs-attr">currentTarget</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'g'</span>)})
+});
+</div></code></pre>
+<script src="./js/triangle.js"></script>
+
+</main>
+<footer>
+  <span class="left">microJam &ndash; g2</span>
+  <span class="center">powered by &mu;Jam &amp; <a href="https://code.visualstudio.com/">VSCode</a> &mdash; hosted by <a href="https://github.com/">GitHub</a></span>
+  <span class="right"
+        title="toggle light/dark theme"
+        onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">
+    &#9788;
+  </span>
+</footer>
+<script src="js/g2.html.js"></script>
+</body>
+</html>
