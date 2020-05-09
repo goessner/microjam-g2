@@ -1,7 +1,7 @@
 ---
 "layout": "page"
 ---
-# g2 &ndash; Interactiv Weak Contrained Geometry
+# g2 &ndash; Interactive Weak Constrained Geometry
 
 This are mostly `g2` features shown here. You can select and move the three circular handles in the vector graphics below.
 

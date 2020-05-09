@@ -8,19 +8,21 @@
 
 .theme-light {
     --color-main: #1f3939;
-    --bgcol-main: snow;
+    --bgcol-main: #fffafa;   /* snow */
     --color-header: #e2f3f3;
     --bgcol-header: #3c6362;
     --color-link: #4b7776;
     --color-hover: #87acac;
+    --color-plnk: #1f393922;
 }
 .theme-dark {
-    --color-main: snow;
+    --color-main:#fffafa;   /* snow */
     --bgcol-main: #3c6362;
     --color-header: #3c6362;
     --bgcol-header: #e2f3f3;
     --color-link: #c6dddb;
     --color-hover: #6f9999;
+    --color-plnk: #fffafa22;
 }
 
 @media screen {
@@ -106,11 +108,11 @@ header a:hover {
 }
 
 h1>a.plnk,h2>a.plnk,h3>a.plnk {
-  display: none;
+  color: var(--color-plnk);
   text-decoration: none;
-  color: inherit;
 }
 h1:hover>a.plnk,h2:hover>a.plnk,h3:hover>a.plnk {
+  color: var(--color-main);
   display: initial;
 }
 p, blockquote { 
